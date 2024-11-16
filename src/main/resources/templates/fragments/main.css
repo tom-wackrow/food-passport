@@ -1,6 +1,6 @@
 /* General style specifications*/
 :root {
-    --ticket: #44ad60;
+    --ticket: #82c6ed;
     --background: #fffef8;
     --text:#141413;
 }
@@ -24,3 +24,25 @@ body {
     background-color: var(--background);
 }
 
+main{
+    display: flex;
+    height: 65px;
+    flex-direction: row;
+    height: 100%;
+}
+
+.left-side{
+    flex-grow:4;
+
+}
+
+.right-side{
+    width:27%;
+    border-left: 5px dotted rgb(128, 118, 95);
+    height: 100%;
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    right: 0;
+   
+    
+
+}

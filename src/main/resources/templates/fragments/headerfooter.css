@@ -1,18 +1,41 @@
-:root {
-    --ticket: #44ad60;
-    --background: ;
-    --text:#141413;
-}
+
 
 header{
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 65px;
+    flex-direction: row;
 }
 
 .ticket-top{
-    height: 65px;
-    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    padding-left: 20px;
+    flex-grow: 4;
+    flex: 0.99;
+    border-bottom-right-radius: 25px;
     background-color: var(--ticket);
+    height: 100%;
+}
+
+.menu{
+    padding: 0;
+    margin: 0;
+    width:27%;
+    border-left: 5px dotted rgb(128, 118, 95);
+    
+    
+}
+
+.menu-header{
+    width: 0.5; 
+    height: 65px; 
+    border-bottom-left-radius: 25px;
+    background-color: var(--ticket); /* Ensure the background color covers the entire header */
+    display: flex; /* Flex to center the content */
+    align-items: center;
+    justify-content: center;
+   
 }
