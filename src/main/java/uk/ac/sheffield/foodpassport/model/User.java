@@ -29,7 +29,7 @@ public class User {
 
     @OneToMany
     @JsonIgnore
-    @JoinColumn(name = "user_meals")
+    @JoinColumn(name = "owner")
     private Set<Meal> meals = new HashSet<>();
 
     public User() {
