@@ -39,3 +39,15 @@ header{
     justify-content: center;
    
 }
+
+footer{
+    min-height: 40px;
+    justify-content: center;
+    position: absolute;
+    inset: auto 0 0 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: var(--ticket);
+    align-items: center;
+}
