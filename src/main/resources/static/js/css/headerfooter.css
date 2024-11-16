@@ -1,5 +1,4 @@
 
-
 header{
     display: flex;
     justify-content: space-between;
@@ -8,7 +7,7 @@ header{
     flex-direction: row;
 }
 
-.ticket-top{
+.ticket-top, .footer-one{
     display: flex;
     align-items: center;
     justify-content: left;
@@ -20,12 +19,11 @@ header{
     height: 100%;
 }
 
-.menu{
+.menu, .footer-two{ 
     padding: 0;
     margin: 0;
     width:27%;
     border-left: 5px dotted rgb(128, 118, 95);
-    
     
 }
 
@@ -42,12 +40,10 @@ header{
 
 footer{
     min-height: 40px;
-    justify-content: center;
     position: absolute;
     inset: auto 0 0 0;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     background-color: var(--ticket);
-    align-items: center;
 }

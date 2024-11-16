@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">*/
 
-h1,h2,h3,h4,h5,a {
+h1,h2,h3,h4,h5,a,p {
     font-family: "Nunito", arial;
     color: var(--text);
 }
@@ -38,6 +38,8 @@ main{
 
 .right-side{
     display: flex;
+    align-items: center;
+    padding-top: 10px;
     flex-direction: column;
     width:27%;
     border-left: 5px dotted rgb(128, 118, 95);
@@ -47,3 +49,39 @@ main{
     
 
 }
+
+
+button{
+    border-radius: 8px;
+    border-style: none;
+    display: inline-block;
+    font-size: 14px;
+    height: 40px;
+    margin: 0;
+    padding: 10px 16px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+}
+
+.primary-button{
+    background-color: var(--ticket);
+    color: #FFFFFF;
+    outline: none;
+}
+
+.secondary-button{
+    background-color: transparent;
+    color: var(--tickete);
+    border: 2px solid var(--ticket);
+}
+
+.tertiary-button{
+    background-color: transparent;
+    color: #12b5d3;
+    border: none;
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+
+}
+
