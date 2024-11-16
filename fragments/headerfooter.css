@@ -1,0 +1,18 @@
+:root {
+    --ticket: #44ad60;
+    --background: ;
+    --text:#141413;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 65px;
+}
+
+.ticket-top{
+    height: 65px;
+    width: 100px;
+    background-color: var(--ticket);
+}

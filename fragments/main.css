@@ -1,0 +1,26 @@
+/* General style specifications*/
+:root {
+    --ticket: #44ad60;
+    --background: #fffef8;
+    --text:#141413;
+}
+/* Elements total width and height include padding and border*/
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/*<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">*/
+
+h1,h2,h3,h4,h5,a {
+    font-family: "Nunito", arial;
+    color: var(--text);
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: var(--background);
+}
+
