@@ -13,6 +13,6 @@ header{
 
 .ticket-top{
     height: 65px;
-    width: 100px;
+    width: 200px;
     background-color: var(--ticket);
 }
