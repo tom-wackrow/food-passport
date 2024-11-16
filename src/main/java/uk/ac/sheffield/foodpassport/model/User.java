@@ -12,12 +12,14 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 
 @Entity
 @Table(name = "users")
 public class User {
     @Id
     @Column(name = "username")
+    @Size(min = 6, max = 20, message = "Username must be at least 6 characters long and 20 characters at most")
     @NotBlank(message = "Username is required")
     private String username;
 
