@@ -31,25 +31,38 @@ main{
     height: 100%;
 }
 
-.left-side{
-    flex-grow:4;
 
-}
-
-.right-side{
-    display: flex;
-    align-items: center;
+.right-side {
     padding-top: 10px;
-    flex-direction: column;
     width:27%;
     border-left: 5px dotted rgb(128, 118, 95);
     height: 100%;
     position: fixed; /* Fixed Sidebar (stay in place on scroll) */
     right: 0;
-    
+}
+
+.left-side{
+    flex-grow:4;
 
 }
 
+.navbar{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+
+}
+
+.hidden {
+    display: none;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 button{
     border-radius: 8px;
@@ -72,7 +85,7 @@ button{
 
 .secondary-button{
     background-color: transparent;
-    color: var(--tickete);
+    color: var(--ticket);
     border: 2px solid var(--ticket);
 }
 

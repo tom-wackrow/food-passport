@@ -16,6 +16,7 @@ body {
     justify-content: center;
     align-items: center;
     background-color: var(--background);
+
 }
 
 .container {
@@ -59,6 +60,10 @@ body {
     text-align: center;
 }
 
+.logo-image{
+    height:300px;
+}
+
 .form-group {
     margin-bottom: 15px;
 }
@@ -79,7 +84,7 @@ body {
 button {
     width: 100%;
     padding: 10px;
-    background-color: var(--background);
+    background-color: var(--ticket);
     border: none;
     color: #fff;
     font-size: 16px;
