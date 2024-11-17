@@ -3,8 +3,8 @@ package uk.ac.sheffield.foodpassport.controller;
 import java.time.Instant;
 import java.util.List;
 
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -42,12 +42,13 @@ public class MealController {
     public String createMeal(Meal meal, BindingResult bindingResult,
             RedirectAttributes redirectAttributes, Model model) {
         // Check validation errors
-        String username = SecurityContextHolder.getContext().getAuthentication().getName();
-        System.out.println(username);
-        if (username.equals("anonymousUser")) {
-            throw new UsernameNotFoundException("Username not found: " + username);
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+
+        if (auth == null) {
+            return "login";
         }
 
+        String username = auth.getName();
         User user = userService.getUserByUsername(username).get();
         meal.setOwner(user);
         meal.setTime_created(Instant.now());
