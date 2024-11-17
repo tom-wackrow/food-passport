@@ -88,13 +88,18 @@ button:hover svg {
 }
 
 .secondary-button{
-    border-radius:12px;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+
+    border-radius: 12px;
     height: 40px;
     width: 120px;
     background-color: transparent;
-    color:white;
+    color: white;
     border: 3px solid white;
     font-size: 16px;
+    text-decoration: none; 
 }
 
 h1{
