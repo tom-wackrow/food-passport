@@ -43,6 +43,6 @@ public class AuthController {
             return "register";
         }
         model.addAttribute("successMessage", "User Created Successfully");
-        return "/login";
+        return "redirect:/login";
     }
 }
