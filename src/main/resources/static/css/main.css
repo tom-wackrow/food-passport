@@ -21,19 +21,18 @@
 body {
     padding: 0;
     margin: 0;
-    background-color: var(--background);
-}
+    /*background-color: var(--background);*/
 
-main{
-    display: flex;
-    height: 65px;
-    flex-direction: row;
-    height: 100%;
-
-    background-image:  url('../image/ticket.jpg');
+    background-image: url('../image/ticket.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
 }
 
 
@@ -48,7 +47,6 @@ main{
 
 .left-side{
     flex-grow:4;
-
 }
 
 .navbar{
@@ -58,6 +56,7 @@ main{
     align-items: center;
     height: 100%;
     text-decoration: none;
+    justify-content: center;
 
 }
 
