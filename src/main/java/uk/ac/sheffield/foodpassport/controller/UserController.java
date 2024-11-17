@@ -4,9 +4,7 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import uk.ac.sheffield.foodpassport.model.User;
 import uk.ac.sheffield.foodpassport.service.UserService;
@@ -30,5 +28,10 @@ public class UserController {
             model.addAttribute("error", "User with username " + username + " not found");
         }
         return "user";
+    }
+
+    @PostMapping("/search")
+    public String searchUser(String username) {
+        return "redirect:/users/" + username;
     }
 }
