@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Landing Page</title>
+
+        <!-- Importing font family from google -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+        
+        <link rel="stylesheet" th:href="@{/css/landingpage.css}" />
+        <meta name = "author" content = "Zhaoxing Li"> 
+    </head>
+
+    <body>
+        <main>
+            <div class="front-section">
+                <header>
+                    <a th:href="@{/login}" class="btn secondary-button">
+                        Log In
+                    </a>
+                </header>
+                <h3>Are you a global cruncher? An avid muncher? Then welcome to...</h3>
+                <h1 class="title">EAT THE GLOBE</h1>  
+                <form th:action="@{'https://www.eattheglobe.club/user=' + ${q}}" method="get" class="search-bar">
+                    <input type="text" placeholder="Enter Username To Explore..." name="q">
+                    <button type="submit" class="search-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="24" height="24" aria-label="Search Icon">
+                            <path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/>
+                        </svg>
+                    </button>
+                </form>
+                <p>Not got an account? <a th:href="@{/register}">Click here to create one</a></p>
+            </div>
+            <div class="how-it-works">
+                <div class="how-text">
+                    <h2>How it works?</h2>
+                    <p>Want to show off or keep track of your culinary miles?
+                        Everytime you eat out or cook a meal, 
+                        log what you ate and the country of origin and watch your foodie passport expand!</p>
+                    <a th:href="@{/register}" class="btn primary-button">
+                        Sign Up Now
+                    </a>
+                    
+                </div>
+                <div class="how-image">
+                    <!-- Insert preview image of website -->
+                </div>
+            </div>  
+        </main>
+
+        <footer>            
+            <p class="footer-text">Created by Tom, Tom, Yejin, Xing</p>
+        </footer>
+
+        
+    </body>
+</html>
+ 
+
+  

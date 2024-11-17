@@ -1,0 +1,155 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+h1,h2,h3,h4,h5,a,p {
+    font-family: "Nunito", arial;
+    color: white;
+}
+
+p{
+    font-size: 17px;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    position: absolute;
+    inset: 20px 20px auto auto;
+    
+}
+
+.title{
+    font-size: 60px;
+}
+
+.search-bar{
+    width: 100%;
+    max-width: 700px;
+    background-color: rgba(255, 236, 178, 0.301);
+    display:flex;
+    align-items: center;
+    border-radius: 60px;
+    padding: 10px 20px;
+    backdrop-filter: blur(4px) saturate(180%);
+}
+.placeholder-username{
+    color:white;
+}
+
+input::placeholder{
+    color:rgb(255, 250, 241);
+    opacity: 1;
+}
+.search-button{
+    background-color: transparent;
+    border:none;
+}
+
+button svg {
+    width: 30px;
+    height: 30px;
+    fill: #d5be7f; /* Apply desired color */
+    background-color: transparent;
+}
+
+button:hover svg {
+    fill: #ffffff; /* Change color on hover */
+}
+
+.search-bar input{
+    background: transparent;
+    flex: 1;
+    border: 0;
+    outline: none;
+    padding: 15px 20px;
+    font-size: 16px;
+    color:rgb(255, 255, 255);
+}
+
+.title-button{
+    flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    margin-right: 20px;
+}
+.primary-button{
+    border-radius:20px;
+    height: 40px;
+    width: 150px;
+    background-color: rgba(255, 194, 12, 0.151);
+    color:rgb(255, 255, 255);
+    font-size: 20px;
+    border:none;
+    font-size: 16px;
+    backdrop-filter: blur(4px) saturate(180%);
+}
+
+.secondary-button{
+    border-radius:12px;
+    height: 40px;
+    width: 120px;
+    background-color: transparent;
+    color:white;
+    border: 3px solid white;
+    font-size: 16px;
+}
+
+h1{
+    color:white;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+}
+
+.front-section{
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+
+    align-items: center; 
+    justify-content: center; 
+
+    /*Image from unsplash*/
+    background-image: linear-gradient(rgba(0, 0, 0, 0.438), rgba(255, 255, 255, 0.5)), 
+    url('../image/globes.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+
+}
+
+.how-it-works{
+    display: flex;
+    flex-direction: row;
+    min-height: 270px;
+    background-color: rgb(201, 173, 125);
+}
+
+.how-text{
+    padding: 40px;
+    flex:2;
+
+}
+
+.how-image{
+    flex:1.2;
+    background-color: white;
+}
+
+footer{
+    min-height: 20px;
+    background-color: rgb(201, 173, 125);
+    display: flex;
+    border-top: 1px solid rgb(188, 162, 117);
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-text{
+    font-size: 13px;
+}
