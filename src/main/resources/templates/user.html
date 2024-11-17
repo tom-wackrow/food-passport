@@ -66,7 +66,7 @@
 
         <div class="menu">
             <div class="menu-header">
-                <h1>YOUR MENU</h1>
+                <h1 id="legends">Legends</h1>
             </div>
         </div>
     </header>
@@ -77,10 +77,6 @@
         </div>
         <div class="right-side">
             <div class="navbar">
-                <a href="#">Map</a>
-                <a href="#">Profile</a>
-                <a href="#">Clients</a>
-                <a href="#">Contact</a>
                 <button id="toggleNavbarForm">+</button>
             </div>
 
@@ -91,13 +87,13 @@
                 </tr>
             </table>
 
-            <form id="form" class="hidden">
+            <form th:action="@{/}" method="post" id="form" class="hidden">
+                <label for="meal">Dish:</label>
+                <input type="text" id="meal" name="meal" placeholder="Your meal...">
                 <label for="country">Country:</label>
                 <input type="text" id="country" name="country" placeholder="Type in country...">
-                <label for="meal">Meal:</label>
-                <input type="text" id="meal" name="meal" placeholder="Your meal...">
-                <label for="recipe">Recipe:</label>
-                <input type="text" id="recipe" name="recipe" placeholder="Your recipe...">
+                <label for="checkbox">Post public</label>
+                <input type="checkbox" id="checkbox" name="checkbox" >
                 <button id="add">Add meal</button>
             </form>
         </div>
