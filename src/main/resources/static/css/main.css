@@ -29,6 +29,11 @@ main{
     height: 65px;
     flex-direction: row;
     height: 100%;
+
+    background-image:  url('../image/ticket.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
 
 

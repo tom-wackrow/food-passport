@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Main</title>
+
+    <!-- Importing font family from google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" th:href="@{/css/headerfooter.css}">
+    <link rel="stylesheet" th:href="@{/css/main.css}">
+
+    <meta name="author" content="Zhaoxing Li">
+
+    <script src="http://code.jquery.com/jquery-3.3.1.slim.js"
+        integrity="sha256-fNXJFIlca05BIO2Y5zh1xrShK3ME+/lYZ0j+ChxX2DA=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script th:inline="javascript">
+        google.charts.load('current', {
+            'packages': ['geochart'],
+            'mapsApiKey': 'AIzaSyDh1jJ04hFPaPz5xYHRGpEu0EGxf2kD18g',
+        });
+        google.charts.setOnLoadCallback(drawRegionsMap);
+
+        function drawRegionsMap() {
+            var list = /*[[${user.meals}]]*/[];
+            var finalList = [];
+            list.forEach((meal) => {
+                finalList.push([meal.latitude, meal.longitude, meal.title])
+            });
+
+            var data = new google.visualization.DataTable();
+
+            data.addColumn('number', 'Latitude');
+            data.addColumn('number', 'Longitude');
+            data.addColumn('string', 'Meal Name');
+
+            data.addRows(finalList);
+
+
+            console.log(data);
+            var options = {
+                displayMode: 'markers',
+                resolution: 'regions'
+            };
+
+            var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+
+            chart.draw(data, options);
+        }
+
+
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="ticket-top">
+            <h1>EAT THE GLOBE</h1>
+        </div>
+
+        <div class="menu">
+            <div class="menu-header">
+                <h1>YOUR MENU</h1>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="left-side">
+            <div id="regions_div" style="max-width: 900px; height: 500px;">/ </div>
+        </div>
+        <div class="right-side">
+            <div class="navbar">
+                <a href="#">Map</a>
+                <a href="#">Profile</a>
+                <a href="#">Clients</a>
+                <a href="#">Contact</a>
+                <button id="toggleNavbarForm">+</button>
+            </div>
+
+            <table>
+                <tr th:each="meal: ${user.getMeals()}">
+                    <td th:text="${meal.owner.username}"></td>
+                    <td th:text="${meal.title}"></td>
+                </tr>
+            </table>
+
+            <form id="form" class="hidden">
+                <label for="country">Country:</label>
+                <input type="text" id="country" name="country" placeholder="Type in country...">
+                <label for="meal">Meal:</label>
+                <input type="text" id="meal" name="meal" placeholder="Your meal...">
+                <label for="recipe">Recipe:</label>
+                <input type="text" id="recipe" name="recipe" placeholder="Your recipe...">
+                <button id="add">Add meal</button>
+            </form>
+        </div>
+    </main>
+    <script src="/js/general.js"></script>
+
+    <footer>
+        <div class="footer-one">
+            <h3>Tom, Tom, Yejin, Xing</h3>
+        </div>
+        <div class="footer-two">
+            <p>HackSheff 2024</p>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>

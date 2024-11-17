@@ -15,17 +15,6 @@ public class PagesController {
         if (auth == null) {
             return "login";
         }
-        return "general";
-    }
-
-    @GetMapping("/map")
-    public String showMapPage(Model model) {
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-
-        if (auth == null) {
-            return "login";
-        }
-
-        return "map";
+        return "landingpage";
     }
 }

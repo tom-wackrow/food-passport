@@ -1,6 +1,6 @@
 package uk.ac.sheffield.foodpassport.model;
 
-import java.util.Date;
+import java.time.Instant;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -38,13 +38,14 @@ public class Meal {
     private User owner;
 
     @Column(name = "time_created")
-    private Date time_created;
+    private Instant time_created;
 
     public Meal() {
 
     }
 
-    public Meal(String title, String country, double latitude, double longitude, boolean is_public, Date time_created) {
+    public Meal(String title, String country, double latitude, double longitude, boolean is_public,
+            Instant time_created) {
         this.title = title;
         this.country = country;
         this.latitude = latitude;
@@ -113,11 +114,11 @@ public class Meal {
         this.owner = owner;
     }
 
-    public Date getTime_created() {
+    public Instant getTime_created() {
         return this.time_created;
     }
 
-    public void setTime_created(Date time_created) {
+    public void setTime_created(Instant time_created) {
         this.time_created = time_created;
     }
 
