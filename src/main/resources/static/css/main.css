@@ -17,25 +17,27 @@
 body {
     padding: 0;
     margin: 0;
+    max-width: 100%;
+    overflow-x: hidden;
     /*background-color: var(--background);*/
 
     background-image: url('../image/ticket.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    background-size: 100vw 100vh;
 }
 
 main {
     display: flex;
     flex-direction: row;
-    height: 100%;
 }
 
 
 .right-side {
     padding-top: 10px;
     width:27%;
-    border-left: 5px dotted rgb(128, 118, 95);
+    /* border-left: 5px dotted rgb(128, 118, 95); */
     height: 100%;
     position: fixed; /* Fixed Sidebar (stay in place on scroll) */
     right: 0;
@@ -53,6 +55,7 @@ main {
     margin-left: auto;
     margin-right: auto;
 }
+
 .navbar{
     display: flex;
     flex-direction: column;

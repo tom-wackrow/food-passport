@@ -90,13 +90,13 @@
 
             <form th:action="@{/meals}" method="post" id="form" style="margin-left: auto; margin-right: auto;">
                 <label for="title">Title:</label>
-                <input type="text" id="title" name="title" placeholder="Your meal..." th:value="${title}">
+                <input type="text" id="title" name="title" placeholder="Your meal...">
                 <label for="country">Country:</label>
-                <input type="text" id="country" name="country" placeholder="Type in country..." th:value="${country}">
+                <input type="text" id="country" name="country" placeholder="Type in country...">
                 <label for="city">City:</label>
-                <input type="text" id="city" name="city" placeholder="Your city..." th:value="${city}">
+                <input type="text" id="city" name="city" placeholder="Your city...">
                 <label for="checkbox">Post public</label>
-                <input type="checkbox" id="checkbox" name="checkbox" th:checked="${is_public}">
+                <input type="checkbox" id="checkbox" name="checkbox">
                 <button type="submit" id="add">Add meal</button>
             </form>
         </div>

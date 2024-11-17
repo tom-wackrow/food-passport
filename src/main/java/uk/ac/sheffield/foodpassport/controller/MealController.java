@@ -4,12 +4,12 @@ import java.time.Instant;
 import java.util.List;
 
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -31,18 +31,23 @@ public class MealController {
         this.userService = userService;
     }
 
-    @GetMapping("/")
+    @GetMapping("")
     public String showAllMeals(Model model) {
         List<Meal> meals = mealService.findAll();
         model.addAttribute("meals", meals);
         return "all_meals";
     }
 
-    @PostMapping("/")
-    public String createMeal(@RequestBody Meal meal, BindingResult bindingResult,
-            RedirectAttributes redirectAttributes) {
+    @PostMapping("")
+    public String createMeal(Meal meal, BindingResult bindingResult,
+            RedirectAttributes redirectAttributes, Model model) {
         // Check validation errors
         String username = SecurityContextHolder.getContext().getAuthentication().getName();
+        System.out.println(username);
+        if (username.equals("anonymousUser")) {
+            throw new UsernameNotFoundException("Username not found: " + username);
+        }
+
         User user = userService.getUserByUsername(username).get();
         meal.setOwner(user);
         meal.setTime_created(Instant.now());
