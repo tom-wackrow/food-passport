@@ -23,7 +23,7 @@ public class MealController {
     public String createMeal(Meal meal, BindingResult bindingResult, RedirectAttributes redirectAttributes){
         //Check validation errors
         if (bindingResult.hasErrors()) {
-            redirectAttributes.addFlashAttribute("errorMessage", "Error creating meal: " + bindingResult.getFieldError().getDefaultMessage());
+            redirectAttributes.addFlashAttribute("errorMessage", "Error creating meal: " + bindingResult.getAllErrors().get(0).getDefaultMessage());
             return "redirect:/users/" + meal.getOwner();
         }
 
