@@ -49,10 +49,7 @@ main {
 
 
 .right-side form {
-    margin-top: auto;
-    position: absolute;
     bottom: 0;
-    height: 20%;
     margin-left: auto;
     margin-right: auto;
 }
