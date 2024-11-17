@@ -1,14 +1,15 @@
 package uk.ac.sheffield.foodpassport.controller;
 
+import java.util.Optional;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+
 import uk.ac.sheffield.foodpassport.model.User;
 import uk.ac.sheffield.foodpassport.service.UserService;
-
-import java.util.Optional;
 
 @Controller
 @RequestMapping("/users")
@@ -18,7 +19,7 @@ public class UserController {
     public UserController(UserService userService) {
         this.userService = userService;
     }
-    //CRUD
+    // CRUD
 
     @GetMapping("/{username}")
     public String showUser(@PathVariable String username, Model model) {
