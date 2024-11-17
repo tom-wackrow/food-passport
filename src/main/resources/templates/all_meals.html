@@ -28,7 +28,7 @@
         google.charts.setOnLoadCallback(drawRegionsMap);
 
         function drawRegionsMap() {
-            var list = /*[[${user.meals}]]*/[];
+            var list = /*[[${meals}]]*/[];
             var finalList = [];
             list.forEach((meal) => {
                 finalList.push([meal.city, meal.title])
@@ -75,14 +75,14 @@
             <div id="regions_div" style="max-width: 100%; height: calc(100vh - 123px);">/ </div>
         </div>
         <div class="right-side">
-            <div class="navbar" th:unless="${user.meals}">
+            <div class="navbar" th:unless="${meals}">
                 <h2>There are no meals currently on display. Click the plus button to add some more!</h2>
                 <button id="toggleNavbarForm">+</button>
             </div>
-            <table th:if="${user.meals}" style="margin-left: auto; margin-right: auto;">
+            <table th:if="${meals}" style="margin-left: auto; margin-right: auto;">
                 <th>Meal Name</th>
                 <th>Username</th>
-                <tr th:each="meal: ${user.meals}">
+                <tr th:each="meal: ${meals}">
                     <td th:text="${meal.title}"></td>
                     <td th:text="${meal.owner.username}"></td>
                 </tr>

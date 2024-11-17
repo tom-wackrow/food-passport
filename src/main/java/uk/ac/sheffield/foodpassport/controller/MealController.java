@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -28,6 +29,13 @@ public class MealController {
     public MealController(MealService mealService, UserService userService) {
         this.mealService = mealService;
         this.userService = userService;
+    }
+
+    @GetMapping("/")
+    public String showAllMeals(Model model) {
+        List<Meal> meals = mealService.findAll();
+        model.addAttribute("meals", meals);
+        return "all_meals";
     }
 
     @PostMapping("/")
