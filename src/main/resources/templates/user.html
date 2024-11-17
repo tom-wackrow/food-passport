@@ -87,14 +87,14 @@
                 </tr>
             </table>
 
-            <form th:action="@{/}" method="post" id="form" class="hidden">
+            <form th:action="@{/meals}" method="post" id="form" class="hidden">
                 <label for="meal">Dish:</label>
                 <input type="text" id="meal" name="meal" placeholder="Your meal...">
                 <label for="country">Country:</label>
                 <input type="text" id="country" name="country" placeholder="Type in country...">
                 <label for="checkbox">Post public</label>
-                <input type="checkbox" id="checkbox" name="checkbox">
-                <button id="add">Add meal</button>
+                <input type="checkbox" id="checkbox" name="checkbox" >
+                <button type="submit" id="add">Add meal</button>
             </form>
         </div>
     </main>
