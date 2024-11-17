@@ -76,6 +76,10 @@ button:hover svg {
     margin-right: 20px;
 }
 .primary-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     border-radius:20px;
     height: 40px;
     width: 150px;
@@ -85,6 +89,7 @@ button:hover svg {
     border:none;
     font-size: 16px;
     backdrop-filter: blur(4px) saturate(180%);
+    text-decoration: none;
 }
 
 .secondary-button{
