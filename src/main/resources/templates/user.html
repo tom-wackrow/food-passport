@@ -31,13 +31,12 @@
             var list = /*[[${user.meals}]]*/[];
             var finalList = [];
             list.forEach((meal) => {
-                finalList.push([meal.latitude, meal.longitude, meal.title])
+                finalList.push([meal.city, meal.title])
             });
 
             var data = new google.visualization.DataTable();
 
-            data.addColumn('number', 'Latitude');
-            data.addColumn('number', 'Longitude');
+            data.addColumn('string', 'City');
             data.addColumn('string', 'Meal Name');
 
             data.addRows(finalList);
@@ -94,7 +93,7 @@
                 <label for="country">Country:</label>
                 <input type="text" id="country" name="country" placeholder="Type in country...">
                 <label for="checkbox">Post public</label>
-                <input type="checkbox" id="checkbox" name="checkbox" >
+                <input type="checkbox" id="checkbox" name="checkbox">
                 <button id="add">Add meal</button>
             </form>
         </div>

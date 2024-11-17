@@ -1,16 +1,13 @@
 package uk.ac.sheffield.foodpassport.service;
 
-import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.stereotype.Service;
-import uk.ac.sheffield.foodpassport.model.Meal;
-import uk.ac.sheffield.foodpassport.repository.MealRepository;
-import uk.ac.sheffield.foodpassport.repository.UserRepository;
-import uk.ac.sheffield.foodpassport.model.User;
-
-import java.util.List;
 import java.util.Optional;
 
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
+
+import uk.ac.sheffield.foodpassport.model.Meal;
 import uk.ac.sheffield.foodpassport.model.User;
+import uk.ac.sheffield.foodpassport.repository.MealRepository;
 import uk.ac.sheffield.foodpassport.repository.UserRepository;
 
 @Service
