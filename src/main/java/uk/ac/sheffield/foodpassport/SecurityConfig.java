@@ -32,7 +32,7 @@ public class SecurityConfig {
                 .formLogin((form) -> form
                         .loginProcessingUrl("/login")
                         .loginPage("/login")
-                        .defaultSuccessUrl("/")
+                        .defaultSuccessUrl("/users")
                         .failureHandler(authenticationFailureHandler())
                         .permitAll())
                 .logout((logout) -> logout
@@ -40,7 +40,7 @@ public class SecurityConfig {
                         .logoutSuccessUrl("/login")
                         .invalidateHttpSession(true)
                         .clearAuthentication(true));
-        
+
         http.csrf((csrf) -> csrf.disable());
 
         return http.build();
